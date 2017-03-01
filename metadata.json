@@ -9,7 +9,8 @@
   "issues_url": "https://github.com/cosaquee/puppet-rocket/issues",
   "dependencies": [
       {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0",
-       "name":"puppetlabs-mongodb","version_requirement":">= 0.17.0"
+       "name":"puppetlabs-mongodb","version_requirement":">= 0.17.0",
+       "name":"willdurand-nodejs","version_requirement":">= 2.0.0-alpha1"
       }
   ]
 }

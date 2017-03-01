@@ -1,13 +1,11 @@
+# Packages that are neccesary for Rocket.Chat installation and configuration
 class rocket::packages {
 
-  class { 'nodejs':
-    version => 'v4.5.0'
-  }
+  class { 'nodejs': }
 
   package { 'curl':
     ensure => installed,
   }
-
 
   package { 'graphicsmagick':
     ensure => installed,
