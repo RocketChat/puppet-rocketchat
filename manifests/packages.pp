@@ -1,7 +1,9 @@
 # Packages that are neccesary for Rocket.Chat installation and configuration
 class rocket::packages {
 
-  class { 'nodejs': }
+  class { 'nodejs':
+    repo_url_suffix => '4.x',
+  }
 
   package { 'curl':
     ensure => installed,

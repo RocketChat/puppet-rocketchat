@@ -11,8 +11,8 @@ describe 'rocket' do
   }
 
   it 'should run without errors' do
-    result = apply_manifest(manifest, :catch_failures => true, :debug => true)
-    expect(@result.exit_code).to eq 2
+    result = apply_manifest(manifest, :catch_failures => true)
+    expect(result.exit_code).to eq 2
   end
 
 #  it 'should delete accounts' do

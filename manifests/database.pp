@@ -1,7 +1,9 @@
-class rocket::database(
+# Class that install and configures MongoDB database for Rocket.Chat
+class rocket::database (
   $port,
   $verbose,
-  $manage_repos
+  $manage_repos,
+  $replset
 ){
 
   if ($manage_repos == true) {
@@ -15,5 +17,6 @@ class rocket::database(
     port           => $port,
     verbose        => $verbose,
     service_manage => false,
+    replset        => $replset
   }
 }

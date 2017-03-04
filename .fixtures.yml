@@ -5,3 +5,5 @@ fixtures:
     nodejs: "https://github.com/willdurand/puppet-nodejs.git"
     mongodb: "https://github.com/puppetlabs/puppetlabs-mongodb"
     apt: "https://github.com/puppetlabs/puppetlabs-apt"
+    wget: 'https://github.com/maestrodev/puppet-wget.git'
+    archive: 'https://github.com/voxpupuli/puppet-archive.git'

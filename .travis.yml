@@ -5,14 +5,12 @@ cache:
   - vendor/bundle
   - wget_cache
 rvm:
-  - 2.1.9
   - 2.2.5
   - 2.3.1
 before_install:
   -  gem update --system 2.1.11
 script:
-  - bundle exec rake syntax
-  - bundle exec rake lint
+  - bundle exec rake validate
   - bundle exec rake spec
   - bundle exec rake beaker
 notifications:

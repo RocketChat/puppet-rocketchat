@@ -22,6 +22,8 @@ RSpec.configure do |c|
       on(host, puppet('module', 'install', 'puppet-nodejs'))
       on(host, puppet('module', 'install', 'puppetlabs-apt'))
       on(host, puppet('module', 'install', 'puppetlabs-mongodb'))
+      on(host, puppet('module', 'install', 'maestrodev-wget'))
+      on(host, puppet('module', 'install', 'puppet-archive'))
 
       # Add more setup code as needed
     end

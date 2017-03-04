@@ -3,3 +3,6 @@ log/
 .bundle/
 vendor/
 .gitignore
+Gemfile.lock
+spec/fixtures
+
