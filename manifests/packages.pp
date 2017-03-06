@@ -6,7 +6,7 @@ class rocket::packages {
     before          => Exec['npm install']
   }
 
-    package { 'curl':
+  package { 'curl':
     ensure => installed,
   }
 
