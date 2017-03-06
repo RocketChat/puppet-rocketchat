@@ -18,32 +18,13 @@ This Puppet module installs Rocket.Chat. It can also install and configure rever
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
-
 You can use this module to automate some steps in installation and configuration of Rocket.Chat. For now this module will download and prepare everythink to run Rocket.Chat instance. It can setup reverse proxy of your choice(Apache/Nginx) and configure firewall.
 
 ## Setup
 
 ### What rocket affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
-
 ### Beginning with rocket
-
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
 
 Just 'include rocket' to install Rocket.Chat with managed firewall and Nginx as reverse proxy.
 
@@ -57,4 +38,4 @@ class { 'rocket':
 '''
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+Module is tested on Debian 7, 8 and Ubuntu 14.04 and 16.04

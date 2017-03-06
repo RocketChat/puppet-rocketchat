@@ -24,8 +24,9 @@ class rocket::install(
   exec { 'npm install':
     cwd     => "${destination}/bundle/programs/server/",
     creates => "${destination}/bundle/programs/server/node_modules/",
-    path    => ['/usr/bin', '/usr/sbin',],
+    path    => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/puppetlabs/bin:/root/bin',
     require => [Archive[$file_path], Class['rocket::packages']],
-    # notify  => Exec['apt_update']
   }
+
+
 }
