@@ -13,18 +13,18 @@
 # Copyright 2017 Karol Kozakowski
 #
 class rocket (
-  $mongo_port    = $rocket::params::port,
-  $verbose       = $rocket::params::verbose,
-  $manage_repos  = $rocket::params::manage_repos,
+  $port          = $rocket::params::port,
+  $root_url      = $rocket::params::root_url,
   $download_path = $rocket::params::download_path,
   $destination   = $rocket::params::destination,
   $mongo_host    = $rocket::params::mongo_host,
   $database_name = $rocket::params::database_name,
-  $root_url      = $rocket::params::root_url,
-  $port          = $rocket::params::port,
+  $mongo_port    = $rocket::params::mongo_port,
+  $manage_repos  = $rocket::params::manage_repos,
+  $verbose       = $rocket::params::verbose,
 ) inherits rocket::params {
 
-  class { 'rocket::packages': }
+  include rocket::packages
 
   class { 'rocket::database':
     port         => $mongo_port,
@@ -42,6 +42,7 @@ class rocket (
   class { 'rocket::service':
     port          => $port,
     mongo_host    => $mongo_host,
+    mongo_port    => $mongo_port,
     database_name => $database_name,
     root_url      => $root_url,
     destination   => $destination,

@@ -5,7 +5,8 @@ class rocket::service (
   $mongo_host,
   $database_name,
   $root_url,
-  $destination
+  $destination,
+  $mongo_port
 ) {
 
   file { '/etc/systemd/system/rocket.service':

@@ -1,5 +1,5 @@
 class rocket::params {
-  $port          = 27017
+  $port          = 80
   $verbose       = false
   $manage_repos  = true
   $download_path = '/tmp'
