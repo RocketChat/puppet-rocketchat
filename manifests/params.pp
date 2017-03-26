@@ -1,11 +1,12 @@
 class rocket::params {
-  $port          = 80
-  $verbose       = false
-  $manage_repos  = true
-  $download_path = '/tmp'
-  $destination   = '/opt'
-  $mongo_host    = 'localhost'
-  $mongo_port    = 27017
-  $database_name = 'rocket_chat'
-  $root_url      = 'http://rocket.com'
+  $port           = 80
+  $verbose        = false
+  $manage_repos   = true
+  $download_path  = '/tmp'
+  $destination    = '/opt'
+  $package_ensure = 'latest'
+  $mongo_host     = 'localhost'
+  $mongo_port     = 27017
+  $database_name  = 'rocket_chat'
+  $root_url       = 'http://rocket.com'
 }
