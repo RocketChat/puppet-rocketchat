@@ -14,14 +14,17 @@ class rocket::service (
     content => template("${module_name}/rocket.service.erb")
   }
 
-  service { 'mongod':
-    ensure => 'running',
-    enable => true,
+  if ($mongo_host == 'localhost') {
+    service { 'mongod':
+      ensure => 'running',
+      enable => true,
+      before => Service['rocket'],
+    }
   }
 
   service { 'rocket':
     ensure  => 'running',
     enable  => true,
-    require => [File['/etc/systemd/system/rocket.service'], Service['mongod']]
+    require => File['/etc/systemd/system/rocket.service']
   }
 }

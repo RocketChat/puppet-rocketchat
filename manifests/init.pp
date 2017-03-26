@@ -28,17 +28,19 @@ class rocket (
 
   include rocket::packages
 
-  class { 'rocket::database':
-    port         => $mongo_port,
-    verbose      => $verbose,
-    manage_repos => $manage_repos,
-    require      => Class['rocket::packages']
+  if ($mongo_host == 'localhost') {
+    class { 'rocket::database':
+      port         => $mongo_port,
+      verbose      => $verbose,
+      manage_repos => $manage_repos,
+      require      => Class['rocket::packages'],
+      before       => Class['rocket::install'],
+    }
   }
 
   class { 'rocket::install':
     download_path => $download_path,
     destination   => $destination,
-    require       => Class['rocket::database']
   }
 
   class { 'rocket::service':
