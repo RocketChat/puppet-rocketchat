@@ -2,7 +2,7 @@
 Description=Rocket.Chat service
 
 [Service]
-ExecStart=/usr/bin/node <%= @destination %>/bundle/main.js
+ExecStart=/usr/local/bin/node <%= @destination %>/bundle/main.js
 Restart=always
 RestartSec=10                       # Restart service after 10 seconds if node service crashes
 StandardOutput=syslog               # Output to syslog
