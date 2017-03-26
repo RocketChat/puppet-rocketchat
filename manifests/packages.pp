@@ -2,8 +2,9 @@
 class rocket::packages {
 
   class { 'nodejs':
-    version => '4.x',
-    before  => Exec['npm install']
+    version    => '4.x',
+    build_deps => $::rocket::nodejs_deps,
+    before     => Exec['npm install']
   }
 
   package { 'curl':

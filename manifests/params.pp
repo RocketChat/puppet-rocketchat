@@ -7,6 +7,7 @@ class rocket::params {
   $package_ensure = 'latest'
   $mongo_host     = 'localhost'
   $mongo_port     = 27017
+  $nodejs_deps    = true
   $database_name  = 'rocket_chat'
   $root_url       = 'http://rocket.com'
 }

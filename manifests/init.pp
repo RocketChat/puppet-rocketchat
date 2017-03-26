@@ -21,6 +21,7 @@ class rocket (
   $mongo_host     = $rocket::params::mongo_host,
   $database_name  = $rocket::params::database_name,
   $mongo_port     = $rocket::params::mongo_port,
+  $nodejs_deps    = $rocket::params::nodejs_deps,
   $manage_repos   = $rocket::params::manage_repos,
   $verbose        = $rocket::params::verbose,
 ) inherits rocket::params {
