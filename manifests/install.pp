@@ -11,14 +11,20 @@ class rocket::install(
     source      => "https://rocket.chat/releases/${::rocket::package_ensure}/download",
     destination => $file_path,
     verbose     => false,
-    before      => Archive[$file_path]
+    before      => Archive[$file_path],
+    unless      => "test -d ${destination}/bundle/server",
+  }
+
+  file { $destination:
+    ensure => directory,
   }
 
   archive { $file_path:
     path         => $file_path,
     extract      => true,
     extract_path => $destination,
-    creates      => "${destination}/server",
+    require      => File[$destination],
+    creates      => "${destination}/bundle/server",
   }
 
   exec { 'npm install':
