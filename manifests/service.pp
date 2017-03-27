@@ -7,7 +7,8 @@ class rocket::service (
   $root_url,
   $destination,
   $mongo_port,
-  $mongo_replset
+  $mongo_replset,
+  $authsource
 ) {
 
   file { '/etc/systemd/system/rocket.service':

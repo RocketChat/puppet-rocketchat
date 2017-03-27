@@ -1,4 +1,7 @@
-<%- @mongo_replset = nil if @mongo_replset == '' # guard -%>
+<%- # guards
+authstring = @authsource.to_s != '' ? "?authSource=#{@authsource}" : nil
+replstring = @mongo_replset.to_s != '' ? (authstring ? '&' : '?') + "replicaSet=#{@mongo_replset}" : nil
+-%>
 [Unit]
 Description=Rocket.Chat service
 
@@ -11,10 +14,10 @@ StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=rocket.chat
 Environment=PORT=<%= @port %>
-Environment=MONGO_URL=mongodb://<%= @mongo_host%>:<%= @mongo_port%>/<%= @database_name%><%= @mongo_replset ? "?replicaSet=#{@mongo_replset}" : ""%>
+Environment=MONGO_URL=mongodb://<%= @mongo_host%>:<%= @mongo_port%>/<%= @database_name%><%= authstring %><%= replstring %>
 Environment=ROOT_URL=<%= @root_url %>
 <%- if @mongo_replset -%>
-Environment=MONGO_OPLOG_URL=mongodb://<%= @mongo_host%>:<%= @mongo_port%>/local?replicaSet=<%= @mongo_replset%>
+Environment=MONGO_OPLOG_URL=mongodb://<%= @mongo_host%>:<%= @mongo_port%>/local<%= authstring %><%= replstring %>
 <%- end -%>
 
 [Install]
