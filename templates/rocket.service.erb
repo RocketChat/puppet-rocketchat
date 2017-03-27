@@ -4,9 +4,10 @@ Description=Rocket.Chat service
 [Service]
 ExecStart=/usr/local/bin/node <%= @destination %>/bundle/main.js
 Restart=always
-RestartSec=10                       # Restart service after 10 seconds if node service crashes
-StandardOutput=syslog               # Output to syslog
-StandardError=syslog                # Output to syslog
+# Restart service after 10 seconds if node service crashes
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
 SyslogIdentifier=rocket.chat
 Environment=PORT=<%= @port %> MONGO_URL=mongodb://<%= @mongo_host %>:<%= @mongo_port%>/<%= @database_name%> ROOT_URL=<%= @root_url %>
 
