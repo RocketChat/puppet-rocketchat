@@ -1,3 +1,4 @@
+<%- @mongo_replset = nil if @mongo_replset == '' # guard -%>
 [Unit]
 Description=Rocket.Chat service
 
@@ -9,7 +10,12 @@ RestartSec=10
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=rocket.chat
-Environment=PORT=<%= @port %> MONGO_URL=mongodb://<%= @mongo_host %>:<%= @mongo_port%>/<%= @database_name%> ROOT_URL=<%= @root_url %>
+Environment=PORT=<%= @port %>
+Environment=MONGO_URL=mongodb://<%= @mongo_host%>:<%= @mongo_port%>/<%= @database_name%><%= @mongo_replset ? "?replicaSet=#{@mongo_replset}" : ""%>
+Environment=ROOT_URL=<%= @root_url %>
+<%- if @mongo_replset -%>
+Environment=MONGO_OPLOG_URL=mongodb://<%= @mongo_host%>:<%= @mongo_port%>/local?replicaSet=<%= @mongo_replset%>
+<%- end -%>
 
 [Install]
 WantedBy=multi-user.target
