@@ -1,14 +1,24 @@
+<%- # guards
+authstring = @authsource.to_s != '' ? "?authSource=#{@authsource}" : nil
+replstring = @mongo_replset.to_s != '' ? (authstring ? '&' : '?') + "replicaSet=#{@mongo_replset}" : nil
+-%>
 [Unit]
 Description=Rocket.Chat service
 
 [Service]
-ExecStart=/usr/bin/node <%= @destination %>/bundle/main.js
+ExecStart=/usr/local/bin/node <%= @destination %>/bundle/main.js
 Restart=always
-RestartSec=10                       # Restart service after 10 seconds if node service crashes
-StandardOutput=syslog               # Output to syslog
-StandardError=syslog                # Output to syslog
+# Restart service after 10 seconds if node service crashes
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
 SyslogIdentifier=rocket.chat
-Environment=PORT=<%= @port %> MONGO_URL=mongodb://<%= @mongo_host %>:<%= @mongo_port%>/<%= @database_name%> ROOT_URL=<%= @root_url %>
+Environment=PORT=<%= @port %>
+Environment=MONGO_URL=mongodb://<%= @mongo_host%>:<%= @mongo_port%>/<%= @database_name%><%= authstring %><%= replstring %>
+Environment=ROOT_URL=<%= @root_url %>
+<%- if @mongo_replset -%>
+Environment=MONGO_OPLOG_URL=mongodb://<%= @mongo_host%>:<%= @mongo_port%>/local<%= authstring %><%= replstring %>
+<%- end -%>
 
 [Install]
 WantedBy=multi-user.target
