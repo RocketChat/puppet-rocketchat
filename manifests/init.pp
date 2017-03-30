@@ -28,7 +28,9 @@ class rocket (
   $verbose        = $rocket::params::verbose,
 ) inherits rocket::params {
 
-  include rocket::packages
+  class { 'rocket::packages':
+    nodejs_deps => $nodejs_deps
+  }
 
   if ($mongo_host == 'localhost') {
     class { 'rocket::database':
@@ -41,8 +43,9 @@ class rocket (
   }
 
   class { 'rocket::install':
-    download_path => $download_path,
-    destination   => $destination,
+    download_path  => $download_path,
+    destination    => $destination,
+    package_ensure => $package_ensure
   }
 
   class { 'rocket::service':
@@ -56,5 +59,4 @@ class rocket (
     destination   => $destination,
     require       => Class['rocket::install']
   }
-
 }

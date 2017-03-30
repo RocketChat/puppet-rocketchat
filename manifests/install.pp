@@ -1,6 +1,7 @@
 class rocket::install(
-  $download_path = '/tmp',
-  $destination = '/opt',
+  $download_path,
+  $destination,
+  $package_ensure
 ) {
   include wget
   include apt
@@ -8,7 +9,7 @@ class rocket::install(
   $file_path = "${download_path}/rocket.tgz"
 
   wget::fetch { 'Download stable Rocket.Chat package':
-    source      => "https://rocket.chat/releases/${::rocket::package_ensure}/download",
+    source      => "https://rocket.chat/releases/${package_ensure}/download",
     destination => $file_path,
     verbose     => false,
     before      => Archive[$file_path],
@@ -33,6 +34,4 @@ class rocket::install(
     path    => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/puppetlabs/bin:/root/bin',
     require => [Archive[$file_path], Class['rocket::packages']],
   }
-
-
 }
