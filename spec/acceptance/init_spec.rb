@@ -1,6 +1,3 @@
-# NOTE: the require must match the name of the helper file created above.
-#   If you changed the name there, you'll have to change it here.
-#   You can verify this is correct when you see the log statement from the helper.
 require 'spec_helper_acceptance'
 
 describe 'rocket' do
@@ -11,7 +8,7 @@ describe 'rocket' do
   }
 
   it 'should run without errors' do
-    result = apply_manifest(manifest, :catch_failures => true)
+    result = apply_manifest(manifest, catch_failures: true)
     expect(result.exit_code).to eq 2
   end
 
