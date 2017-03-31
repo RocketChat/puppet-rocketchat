@@ -1,5 +1,5 @@
 # rocket
-[![Build Status](https://travis-ci.org/Cosaquee/puppet-rocket.svg?branch=master)](https://travis-ci.org/Cosaquee/puppet-rocket)
+[![Build Status](https://travis-ci.org/RocketChat/puppet-rocket.svg?branch=master)](https://travis-ci.org/RocketChat/puppet-rocket)
 
 #### Table of Contents
 
@@ -27,17 +27,17 @@ You can use this module to automate some steps in installation and configuration
 
 ### Beginning with rocket
 
-Just 'include rocket' to install Rocket.Chat with managed firewall and Nginx as reverse proxy.
+Just `include rocket` to install Rocket.Chat with managed firewall and Nginx as reverse proxy.
 
 ## Usage
 
-'''ruby
+```ruby
 class { 'rocket':
   root_url    => 'www.yourcompanydomain.com',
   port        => '80',
   destination => '/opt/'
 } 
-'''
+```
 
 ## Limitations
 
