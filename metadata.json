@@ -1,12 +1,12 @@
 {
-  "name": "cosaquee-rocket",
+  "name": "rocketchat-rocketchat",
   "version": "0.1.0",
   "author": "Karol Kozakowski",
   "summary": "Install and configures Rocket Chat Server",
   "license": "MIT",
-  "source": "github.com/cosaquee/puppet-rocket",
-  "project_page": "https://github.com/cosaquee/puppet-rocket",
-  "issues_url": "https://github.com/cosaquee/puppet-rocket/issues",
+  "source": "github.com/rocketchat/puppet-rocketchat",
+  "project_page": "https://github.com/rocketchat/puppet-rocketchat",
+  "issues_url": "https://github.com/rocketchat/puppet-rocketchat/issues",
   "dependencies": [
       {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0",
        "name":"puppetlabs-mongodb","version_requirement":">= 0.17.0",
@@ -25,8 +25,6 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "10.04",
-        "12.04",
         "14.04",
         "16.04"
       ]
