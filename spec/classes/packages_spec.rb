@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'rocket::packages' do
+describe 'rocketchat::packages' do
   on_supported_os.each do |os, facts|
     let(:facts) do
       facts
@@ -11,7 +11,7 @@ describe 'rocket::packages' do
     end
 
     let(:pre_condition) {
-      "class { 'rocket::install':
+      "class { 'rocketchat::install':
         download_path => '/tmp',
         destination =>'/tmp',
         package_ensure => 'latest'
