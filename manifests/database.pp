@@ -1,5 +1,5 @@
 # Class that install and configures MongoDB database for Rocket.Chat
-class rocket::database (
+class rocketchat::database (
   $port,
   $verbose,
   $manage_repos,

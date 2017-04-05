@@ -1,5 +1,5 @@
 # Packages that are neccesary for Rocket.Chat installation and configuration
-class rocket::packages(
+class rocketchat::packages(
   $nodejs_deps
 ) {
 

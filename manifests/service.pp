@@ -1,6 +1,6 @@
 # Class that restarts services that are used by Rocket.Chat
 # TODO: Check what distro are we running and adjust service file configuration
-class rocket::service (
+class rocketchat::service (
   $port,
   $mongo_host,
   $database_name,

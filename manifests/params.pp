@@ -1,4 +1,4 @@
-class rocket::params {
+class rocketchat::params {
   $port           = 80
   $verbose        = false
   $manage_repos   = true

@@ -1,4 +1,4 @@
-# rocket
+# puppet-rocketchat
 [![Build Status](https://travis-ci.org/RocketChat/puppet-rocket.svg?branch=master)](https://travis-ci.org/RocketChat/puppet-rocket)
 
 #### Table of Contents
@@ -36,7 +36,7 @@ class { 'rocket':
   root_url    => 'www.yourcompanydomain.com',
   port        => '80',
   destination => '/opt/'
-} 
+}
 ```
 
 ## Limitations

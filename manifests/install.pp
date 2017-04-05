@@ -1,4 +1,4 @@
-class rocket::install(
+class rocketchat::install(
   $download_path,
   $destination,
   $package_ensure
@@ -32,6 +32,6 @@ class rocket::install(
     cwd     => "${destination}/bundle/programs/server/",
     creates => "${destination}/bundle/programs/server/node_modules/",
     path    => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/puppetlabs/bin:/root/bin',
-    require => [Archive[$file_path], Class['rocket::packages']],
+    require => [Archive[$file_path], Class['rocketchat::packages']],
   }
 }

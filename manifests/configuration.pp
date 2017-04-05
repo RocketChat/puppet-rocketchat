@@ -1,3 +1,0 @@
-class rocket::configuration {
-
-}
