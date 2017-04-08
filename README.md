@@ -1,5 +1,5 @@
 # puppet-rocketchat
-[![Build Status](https://travis-ci.org/RocketChat/puppet-rocket.svg?branch=master)](https://travis-ci.org/RocketChat/puppet-rocket)
+[![Build Status](https://travis-ci.org/RocketChat/puppet-rocketchat.svg?branch=master)](https://travis-ci.org/RocketChat/puppet-rocketchat)
 
 #### Table of Contents
 
