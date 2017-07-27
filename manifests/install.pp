@@ -1,15 +1,21 @@
 class rocketchat::install(
   $download_path,
   $destination,
-  $package_ensure
+  $package_ensure,
+  $package_source,
 ) {
   include wget
   include apt
 
   $file_path = "${download_path}/rocket.tgz"
 
+  $source = $package_source ? {
+    undef   => "https://rocket.chat/releases/${package_ensure}/download",
+    default => "${package_source}/rocket.chat-${package_ensure}.tgz",
+  }
+
   wget::fetch { 'Download stable Rocket.Chat package':
-    source      => "https://rocket.chat/releases/${package_ensure}/download",
+    source      => $source,
     destination => $file_path,
     verbose     => false,
     before      => Archive[$file_path],

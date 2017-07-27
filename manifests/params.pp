@@ -5,6 +5,7 @@ class rocketchat::params {
   $download_path  = '/tmp'
   $destination    = '/opt'
   $package_ensure = 'latest'
+  $package_source = undef
   $mongo_host     = 'localhost'
   $mongo_port     = 27017
   $mongo_replset  = undef

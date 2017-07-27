@@ -14,7 +14,8 @@ describe 'rocketchat::packages' do
       "class { 'rocketchat::install':
         download_path => '/tmp',
         destination =>'/tmp',
-        package_ensure => 'latest'
+        package_ensure => 'latest',
+        package_source => undef
  }"
     }
 

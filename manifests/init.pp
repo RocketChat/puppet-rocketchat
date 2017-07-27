@@ -18,6 +18,7 @@ class rocketchat (
   $download_path  = $rocketchat::params::download_path,
   $destination    = $rocketchat::params::destination,
   $package_ensure = $rocketchat::params::package_ensure,
+  $package_source = $rocketchat::params::package_source,
   $mongo_host     = $rocketchat::params::mongo_host,
   $database_name  = $rocketchat::params::database_name,
   $mongo_port     = $rocketchat::params::mongo_port,
@@ -45,7 +46,8 @@ class rocketchat (
   class { 'rocketchat::install':
     download_path  => $download_path,
     destination    => $destination,
-    package_ensure => $package_ensure
+    package_ensure => $package_ensure,
+    package_source => $package_source
   }
 
   class { 'rocketchat::service':
