@@ -1,9 +1,9 @@
 require 'spec_helper_acceptance'
 
-describe 'rocket::database' do
+describe 'rocketchat::database' do
   let(:manifest) {
     <<-EOS
-     class { 'rocket::database':
+     class { 'rocketchat::database':
       port => 27017,
       verbose => true,
       manage_repos => true,
