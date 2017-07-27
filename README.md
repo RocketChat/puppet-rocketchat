@@ -5,10 +5,10 @@
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with rocket](#setup)
-    * [What rocket affects](#what-rocket-affects)
+3. [Setup - The basics of getting started with rocketchat](#setup)
+    * [What rocketchat affects](#what-rocketchat-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with rocket](#beginning-with-rocket)
+    * [Beginning with rocketchat](#beginning-with-rocketchat)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -23,16 +23,16 @@ You can use this module to automate some steps in installation and configuration
 
 ## Setup
 
-### What rocket affects
+### What rocketchat affects
 
-### Beginning with rocket
+### Beginning with rocketchat
 
-Just `include rocket` to install Rocket.Chat with managed firewall and Nginx as reverse proxy.
+Just `include rocketchat` to install Rocket.Chat with managed firewall and Nginx as reverse proxy.
 
 ## Usage
 
 ```ruby
-class { 'rocket':
+class { 'rocketchat':
   root_url    => 'www.yourcompanydomain.com',
   port        => '80',
   destination => '/opt/'

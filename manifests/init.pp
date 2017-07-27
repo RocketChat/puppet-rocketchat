@@ -1,4 +1,4 @@
-# == Class: rocket
+# == Class: rocketchat
 #
 # Main class for Rocket.Chat installation and configuration
 #
