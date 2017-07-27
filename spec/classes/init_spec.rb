@@ -32,7 +32,8 @@ describe 'rocketchat' do
           is_expected.to contain_class('rocketchat::install').with(
             'download_path' => '/tmp',
             'destination'   => '/opt',
-            'package_ensure' => 'latest'
+            'package_ensure' => 'latest',
+            'package_source' => nil
            )
         end
 
