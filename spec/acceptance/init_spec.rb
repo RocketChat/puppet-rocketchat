@@ -1,9 +1,9 @@
 require 'spec_helper_acceptance'
 
-describe 'rocket' do
+describe 'rocketchat' do
   let(:manifest) {
     <<-EOS
-      include rocket
+      include rocketchat
     EOS
   }
 

@@ -13,11 +13,11 @@ RSpec.configure do |c|
       install_dev_puppet_module_on(
         host,
         source:  module_root,
-        module_name: 'rocket',
+        module_name: 'rocketchat',
         target_module_path:  '/etc/puppetlabs/code/environments/production/modules')
       # Install dependencies
       on(host, puppet('module', 'install', 'puppetlabs-stdlib'))
-      on(host, puppet('module', 'install', 'willdurand-nodejs'))
+      on(host, puppet('module', 'install', '--version', "'>=2.0.0-alpha3'", 'willdurand-nodejs'))
       on(host, puppet('module', 'install', 'puppetlabs-apt'))
       on(host, puppet('module', 'install', 'puppetlabs-mongodb'))
       on(host, puppet('module', 'install', 'maestrodev-wget'))
