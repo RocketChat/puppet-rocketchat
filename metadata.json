@@ -7,8 +7,14 @@
   "source": "github.com/rocketchat/puppet-rocketchat",
   "project_page": "https://github.com/rocketchat/puppet-rocketchat",
   "issues_url": "https://github.com/rocketchat/puppet-rocketchat/issues",
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 6.0.0"
+    }
+  ],
   "dependencies": [
-      {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0",
+      {"name":"puppetlabs-stdlib","version_requirement":">= 4.12.0",
        "name":"puppetlabs-mongodb","version_requirement":">= 0.17.0",
        "name":"willdurand-nodejs","version_requirement":">= 2.0.0-alpha3",
        "name":"maestrodev-wget","version_requirement":">=1.7.0",
@@ -32,4 +38,3 @@
     }
   ]
 }
-
