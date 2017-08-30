@@ -27,10 +27,12 @@ class rocketchat (
   $nodejs_deps    = $rocketchat::params::nodejs_deps,
   $manage_repos   = $rocketchat::params::manage_repos,
   $verbose        = $rocketchat::params::verbose,
+  Optional[Array[String[1]]] $sys_deps,
 ) inherits rocketchat::params {
 
   class { 'rocketchat::packages':
-    nodejs_deps => $nodejs_deps
+    nodejs_deps => $nodejs_deps,
+    sys_deps    => $sys_deps,
   }
 
   if ($mongo_host == 'localhost') {

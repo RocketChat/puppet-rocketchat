@@ -1,0 +1,5 @@
+---
+rocketchat::sys_deps:
+  - curl
+  - gcc-c++
+  - GraphicsMagick

@@ -1,6 +1,7 @@
 # Packages that are neccesary for Rocket.Chat installation and configuration
 class rocketchat::packages(
-  $nodejs_deps
+  Boolean $nodejs_deps,
+  Optional[Array[String[1]]] $sys_deps = [],
 ) {
 
   class { 'nodejs':
@@ -9,15 +10,7 @@ class rocketchat::packages(
     before     => Exec['npm install']
   }
 
-  package { 'curl':
-    ensure => installed,
-  }
-
-  package { 'graphicsmagick':
-    ensure => installed,
-  }
-
-  package { 'build-essential':
+  package { $sys_deps:
     ensure => installed,
   }
 }
