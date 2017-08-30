@@ -5,7 +5,6 @@ class rocketchat::install(
   $package_source,
 ) {
   include wget
-  include apt
 
   $file_path = "${download_path}/rocket.tgz"
 
