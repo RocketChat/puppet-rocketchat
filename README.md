@@ -39,6 +39,10 @@ class { 'rocketchat':
 }
 ```
 
+In the case of multiple Rocket.Chat instances, the instance identification of each should be an address that can be connected by the others.
+If the host IP Rocket.Chat runs on cannot be used as is from other hosts (or a different naming is preferred), the instance\_ip parameter will need to be changed accordingly.
+Not doing so will cause syncing issues (typing information, audio and desktop notifications, etc).
+
 ## Limitations
 
 Module is tested on Debian 7, 8 and Ubuntu 14.04 and 16.04
