@@ -8,7 +8,8 @@ class rocketchat::service (
   $destination,
   $mongo_port,
   $mongo_replset,
-  $authsource
+  $authsource,
+  $instance_ip = undef
 ) {
 
   file { '/etc/systemd/system/rocket.service':

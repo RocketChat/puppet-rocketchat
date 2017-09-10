@@ -13,6 +13,7 @@ RestartSec=10
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=rocket.chat
+Environment=INSTANCE_IP=<%= @instance_ip || scope['::facts']['networking']['ip'] %>
 Environment=PORT=<%= @port %>
 Environment=MONGO_URL=mongodb://<%= @mongo_host%>:<%= @mongo_port%>/<%= @database_name%><%= authstring %><%= replstring %>
 Environment=ROOT_URL=<%= @root_url %>
