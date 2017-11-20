@@ -10,7 +10,6 @@ class rocketchat::params {
   $mongo_port     = 27017
   $mongo_replset  = undef
   $authsource     = undef
-  $nodejs_deps    = true
   $database_name  = 'rocket_chat'
   $root_url       = 'http://rocket.com'
 }
