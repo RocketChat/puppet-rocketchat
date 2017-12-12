@@ -6,7 +6,7 @@ replstring = @mongo_replset.to_s != '' ? (authstring ? '&' : '?') + "replicaSet=
 Description=Rocket.Chat service
 
 [Service]
-ExecStart=/usr/local/bin/node <%= @destination %>/bundle/main.js
+ExecStart=/usr/bin/node <%= @destination %>/bundle/main.js
 Restart=always
 # Restart service after 10 seconds if node service crashes
 RestartSec=10

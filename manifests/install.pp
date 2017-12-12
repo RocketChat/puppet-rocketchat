@@ -9,7 +9,7 @@ class rocketchat::install(
   $file_path = "${download_path}/rocket.tgz"
 
   $source = $package_source ? {
-    undef   => "https://rocket.chat/releases/${package_ensure}/download",
+    undef   => "https://download.rocket.chat/${package_ensure}",
     default => "${package_source}/rocket.chat-${package_ensure}.tgz",
   }
 

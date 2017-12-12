@@ -33,9 +33,9 @@ Just `include rocketchat` to install Rocket.Chat with managed firewall and Nginx
 
 ```ruby
 class { 'rocketchat':
-  root_url    => 'www.yourcompanydomain.com',
+  root_url    => 'http://www.yourcompanydomain.com',
   port        => '80',
-  destination => '/opt/'
+  destination => '/opt'
 }
 ```
 

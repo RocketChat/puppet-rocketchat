@@ -24,14 +24,11 @@ class rocketchat (
   $mongo_port     = $rocketchat::params::mongo_port,
   $mongo_replset  = $rocketchat::params::mongo_replset,
   $authsource     = $rocketchat::params::authsource,
-  $nodejs_deps    = $rocketchat::params::nodejs_deps,
   $manage_repos   = $rocketchat::params::manage_repos,
   $verbose        = $rocketchat::params::verbose,
 ) inherits rocketchat::params {
 
-  class { 'rocketchat::packages':
-    nodejs_deps => $nodejs_deps
-  }
+  class { 'rocketchat::packages': }
 
   if ($mongo_host == 'localhost') {
     class { 'rocketchat::database':

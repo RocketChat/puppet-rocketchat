@@ -6,10 +6,6 @@ describe 'rocketchat::packages' do
       facts
     end
 
-    let(:params) do
-      { nodejs_deps: true }
-    end
-
     let(:pre_condition) {
       "class { 'rocketchat::install':
         download_path => '/tmp',

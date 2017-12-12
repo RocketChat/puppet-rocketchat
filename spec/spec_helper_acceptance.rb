@@ -17,7 +17,7 @@ RSpec.configure do |c|
         target_module_path:  '/etc/puppetlabs/code/environments/production/modules')
       # Install dependencies
       on(host, puppet('module', 'install', 'puppetlabs-stdlib'))
-      on(host, puppet('module', 'install', '--version', "'>=2.0.0-alpha3'", 'willdurand-nodejs'))
+      on(host, puppet('module', 'install', '--version', "'>=4.0.1'", 'puppet-nodejs'))
       on(host, puppet('module', 'install', 'puppetlabs-apt'))
       on(host, puppet('module', 'install', 'puppetlabs-mongodb'))
       on(host, puppet('module', 'install', 'maestrodev-wget'))
