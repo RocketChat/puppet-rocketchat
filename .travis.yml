@@ -16,8 +16,8 @@ notifications:
   email:
     - cosaquee@gmail.com
 env:
-  - PUPPET_VERSION=4.3.2
-  - PUPPET_VERSION=4.4.2
+  - PUPPET_VERSION=4.3.2 FIXTURES_YML=.fixtures-43.yml
+  - PUPPET_VERSION=4.4.2 FIXTURES_YML=.fixtures-43.yml
   - PUPPET_VERSION=4.6.2
   - PUPPET_VERSION=4.8.1
   - PUPPET_VERSION=4.9.0
