@@ -1,10 +1,11 @@
 # Packages that are neccesary for Rocket.Chat installation and configuration
 class rocketchat::packages(
+  $nodejs_version,
   $nodejs_deps
 ) {
 
   class { 'nodejs':
-    version    => '4.x',
+    version    => $nodejs_version,
     build_deps => $nodejs_deps,
     before     => Exec['npm install']
   }
