@@ -14,7 +14,8 @@ describe 'rocketchat' do
       context 'should contain classes with correct params' do
         it do
           is_expected.to contain_class('rocketchat::packages').with(
-            'nodejs_deps' => true
+            'nodejs_version' => '4',
+            'nodejs_deps'    => true
            )
         end
         it do

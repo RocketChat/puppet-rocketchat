@@ -7,7 +7,7 @@ describe 'rocketchat::packages' do
     end
 
     let(:params) do
-      { nodejs_deps: true }
+      { 'nodejs_version' => '8.x', nodejs_deps: true }
     end
 
     let(:pre_condition) {
@@ -27,7 +27,7 @@ describe 'rocketchat::packages' do
       context 'it should contain all classes' do
         it do
           is_expected.to contain_class('nodejs').with(
-            'version'    => '4',
+            'version'    => '8',
             'build_deps' => 'true'
           )
         end

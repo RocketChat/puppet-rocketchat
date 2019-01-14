@@ -3,10 +3,13 @@ fixtures:
     stdlib: 'puppetlabs/stdlib'
     archive:
       repo: 'puppet/archive'
+      ref: '2.3.0'
     apt:
       repo: 'puppetlabs/apt'
+      ref: '4.1.0'
     mongodb:
       repo: 'puppet/mongodb'
+      ref: '1.1.0'
     wget: 'maestrodev/wget'
     nodejs:
       repo: 'willdurand/nodejs'
